@@ -1,50 +1,60 @@
-# Asset Correlation Tool for Financial Markets
-
-## Overview
-This repository provides a simple tool for analyzing correlations between various financial instruments including forex pairs, commodities, indices, and other asset classes. The implementation follows rigorous statistical methodologies.
+# Advanced Correlation Analysis for Financial Markets
 
 ---
 
-## Table of Contents
-- Correlation Analysis Dashboard
-- Installation
-- Data Format Requirements
-- Correlation Methodologies
-- Analysis Options
-- Visualization Outputs
-- Statistical Measures
-- Usage Examples
-- Academic References
-- License
-- Disclaimer
+## **Overview**
+This repository provides a simple tool for analyzing correlations between financial instruments, including forex pairs, commodities, indices, and other asset classes. The implementation follows **rigorous statistical methodologies**.
 
 ---
 
-## Installation
-# Clone the repository
-git clone https://github.com/username/advanced-correlation-analysis.git
-cd advanced-correlation-analysis
-
-# Install dependencies
-pip install -r requirements.txt
+## **Table of Contents**
+- [Installation](#installation)
+- [Data Format Requirements](#data-format-requirements)
+- [Correlation Methodologies](#correlation-methodologies)
+- [Analysis Options](#analysis-options)
+- [Visualization Outputs](#visualization-outputs)
+- [Statistical Measures](#statistical-measures)
+- [Usage Examples](#usage-examples)
+- [Academic References](#academic-references)
+- [License](#license)
+- [Disclaimer](#disclaimer)
 
 ---
 
-## Data Format Requirements
-The tool accepts financial time series data in CSV format with the following specifications:
-- Timestamp column (named 'Time' or in the first position)
-- OHLC (Open, High, Low, Close) price data
-- Optional volume column
-- Asset name is extracted from the filename (e.g., 'EURUSD.csv' will be labeled as 'EURUSD')
+## **Installation**
 
-Example format:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/username/advanced-correlation-analysis.git
+   cd advanced-correlation-analysis
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## **Data Format Requirements**
+The tool accepts financial time series data in **CSV format** with the following specifications:
+
+- **Timestamp column**: Named `'Time'` or in the first position.
+- **OHLC data**: Open, High, Low, Close price data.
+- **Optional**: Volume column.
+- **Asset name**: Extracted from the filename (e.g., `EURUSD.csv` → labeled as `EURUSD`).
+
+**Example format:**
+```csv
 Time,Open,High,Low,Close,Volume
 2025-08-13 17:00:00,147.345,147.423,147.316,147.391,3539
 2025-08-13 18:00:00,147.390,147.511,147.388,147.433,2751
+```
 
 ---
 
-## Correlation Methodologies
+## **Correlation Methodologies**
+
 1. Pearson Correlation
    Mathematical basis: Measures linear relationships between variables
    Formula: ρ_X,Y = cov(X,Y) / (σ_X σ_Y)
@@ -76,66 +86,66 @@ Time,Open,High,Low,Close,Volume
 
 ---
 
-## Analysis Options
-The interactive program provides several analytical options:
-- Asset Selection: Individual file selection, directory-based bulk analysis, automatic detection of available instruments
-- Correlation Parameters: Method (Pearson, Spearman, or Kendall), window size (5-100 periods), pair analysis
-- Output Configuration: File format (PNG, JPG, SVG, PDF), resolution settings (100-600 DPI), display options (interactive visualization or silent export), output naming conventions
+## **Analysis Options**
+The interactive program provides:
+
+- **Asset Selection**: Individual files, directory-based bulk analysis, auto-detection.
+- **Correlation Parameters**: Method (Pearson/Spearman/Kendall), window size (5-100 periods), pair analysis.
+- **Output Configuration**: File format (PNG/JPG/SVG/PDF), resolution (100-600 DPI), interactive/silent export.
 
 ---
 
-## Visualization Outputs
-- Correlation Matrices: Matrix, clustered, partial
-- Time Series Analyses: Rolling, time-varying
-- Structural Analyses: Dendrogram, network, distribution
-- Comprehensive Outputs: Dashboard, Excel export
+## **Visualization Outputs**
+- **Correlation Matrices**: Standard, clustered, partial.
+- **Time Series Analyses**: Rolling, time-varying heatmaps.
+- **Structural Analyses**: Dendrogram, network graph, distribution.
+- **Comprehensive Outputs**: Dashboard, Excel export.
 
 ---
 
-## Statistical Measures
-- Significance Testing: P-value calculation, null hypothesis testing (H₀: ρ = 0), critical value determination
-- Tail Dependence: Lower/upper tail dependence for risk management
-- Stability Analysis: Volatility of correlation coefficients, identification of stable/unstable relationships, structural break detection
+## **Statistical Measures**
+- **Significance Testing**: P-values, null hypothesis testing.
+- **Tail Dependence**: Lower/upper tail for risk management.
+- **Stability Analysis**: Volatility, structural break detection.
 
 ---
 
-## Usage Examples
-### Basic Correlation Analysis
+## **Usage Examples**
+
+### **Basic Correlation Analysis**
+```python
 # Launch the interactive program
 python main.py
-# Follow the on-screen prompts to:
-# 1. Select asset files or directory
-# 2. Choose correlation method and parameters
-# 3. Select visualization types
-# 4. Configure output options
+# Follow prompts to select assets, methods, visualizations, and outputs.
+```
 
-### Integration with Trading Systems
+### **Integration with Trading Systems**
+```python
 from correlation_analyzer import CorrelationAnalyzer, CorrelationVisualizer
-# Load your market data
+
 data = load_trading_data()  # Your data loading function
-# Initialize analyzer
 analyzer = CorrelationAnalyzer(data)
-# Get correlation matrix
 correlation = analyzer.calculate_correlation(method='pearson')
-# Generate dashboard
+
 visualizer = CorrelationVisualizer(analyzer)
 visualizer.create_correlation_dashboard(save_path='trading_dashboard.png')
+```
 
 ---
 
-## Academic References
-- Campbell, J. Y., Lo, A. W., & MacKinlay, A. C. (1997). The Econometrics of Financial Markets. Princeton University Press.
-- McNeil, A. J., Frey, R., & Embrechts, P. (2015). Quantitative Risk Management: Concepts, Techniques and Tools. Princeton University Press.
-- Engle, R. (2002). "Dynamic Conditional Correlation: A Simple Class of Multivariate Generalized Autoregressive Conditional Heteroskedasticity Models". Journal of Business & Economic Statistics, 20(3), 339-350.
-- Embrechts, P., McNeil, A., & Straumann, D. (2002). "Correlation and Dependence in Risk Management: Properties and Pitfalls". In Risk Management: Value at Risk and Beyond (pp. 176-223). Cambridge University Press.
-- Patton, A. J. (2006). "Modelling Asymmetric Exchange Rate Dependence". International Economic Review, 47(2), 527-556.
+## **Academic References**
+- [Campbell, J. Y., Lo, A. W., & MacKinlay, A. C. (1997). *The Econometrics of Financial Markets*. Princeton University Press.](https://press.princeton.edu/books/hardcover/9780691043012/the-econometrics-of-financial-markets)
+- [McNeil, A. J., Frey, R., & Embrechts, P. (2015). *Quantitative Risk Management*. Princeton University Press.](https://press.princeton.edu/books/hardcover/9780691166278/quantitative-risk-management)
+- [Engle, R. (2002). "Dynamic Conditional Correlation". *Journal of Business & Economic Statistics*, 20(3), 339-350.](https://www.tandfonline.com/doi/abs/10.1198/073500102288618487)
+- [Embrechts, P., McNeil, A., & Straumann, D. (2002). "Correlation and Dependence in Risk Management". *Risk Management: Value at Risk and Beyond*. Cambridge University Press.](https://www.cambridge.org/core/books/risk-management/8A1E5F3E0E5A5D1E5F3E0E5A5D1E5F3E)
+- [Patton, A. J. (2006). "Modelling Asymmetric Exchange Rate Dependence". *International Economic Review*, 47(2), 527-556.](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-2354.2006.00387.x)
 
 ---
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## **License**
+This project is licensed under the **[MIT License](LICENSE)**.
 
 ---
 
-## Disclaimer
-This tool is provided for research and analytical purposes only. Financial decisions should not be made solely based on the output of this software. Past correlations do not guarantee future relationships between financial instruments. Users should conduct comprehensive due diligence and risk assessment before making investment decisions.
+## **Disclaimer**
+This tool is provided for **research and analytical purposes only**. Financial decisions should not be made solely based on the output of this software. Past correlations do not guarantee future relationships between financial instruments. Users should conduct comprehensive due diligence and risk assessment before making investment decisions.
