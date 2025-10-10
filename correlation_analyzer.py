@@ -1,5 +1,5 @@
 """
-Advanced Correlation Analysis Tool for Forex and Commodities
+Correlation Analysis Tool
 ============================================================
 Author: clementchmlt
 Date: October 2025
