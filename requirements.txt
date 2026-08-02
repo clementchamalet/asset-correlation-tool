@@ -5,4 +5,3 @@ seaborn>=0.11.0
 scipy>=1.7.0
 networkx>=2.6.0
 openpyxl>=3.0.0
-MetaTrader5>=5.0.0
