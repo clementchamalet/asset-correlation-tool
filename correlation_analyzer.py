@@ -886,14 +886,14 @@ def generate_sample_data(n_days=252, n_instruments=8, seed=42):
     # Generate correlated returns
     dates = pd.date_range(end=pd.Timestamp.today(), periods=n_days, freq='D')
     
-    # Create correlation structure
-    corr_matrix = np.eye(n_instruments)
-    for i in range(n_instruments):
-        for j in range(i+1, n_instruments):
-            corr = np.random.uniform(-0.5, 0.8)
-            corr_matrix[i, j] = corr
-            corr_matrix[j, i] = corr
-    
+    # Create a valid (positive semi-definite) correlation structure by
+    # deriving it from random factor loadings instead of picking pairwise
+    # correlations directly, which is not guaranteed to be consistent.
+    factors = np.random.randn(n_instruments, n_instruments)
+    cov = factors @ factors.T
+    std = np.sqrt(np.diag(cov))
+    corr_matrix = cov / np.outer(std, std)
+
     # Generate correlated returns using Cholesky decomposition
     L = np.linalg.cholesky(corr_matrix)
     returns = np.random.randn(n_days, n_instruments) * 0.01  # 1% daily volatility

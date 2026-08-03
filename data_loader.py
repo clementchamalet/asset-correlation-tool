@@ -179,8 +179,8 @@ def load_multiple_assets(directory, pattern="*.csv"):
             result_df = result_df.join(temp_df, how='outer')
     
     # Fill NA values
-    result_df = result_df.fillna(method='ffill').fillna(method='bfill')
-    
+    result_df = result_df.ffill().bfill()
+
     print(f"Final dataset: {len(result_df)} time periods × {len(result_df.columns)} assets")
     print(f"Period: {result_df.index.min()} to {result_df.index.max()}")
     
@@ -231,6 +231,6 @@ def prepare_correlation_data(files_or_dir, is_directory=False):
                 result_df = result_df.join(temp_df, how='outer')
         
         # Fill NA values
-        result_df = result_df.fillna(method='ffill').fillna(method='bfill')
-        
+        result_df = result_df.ffill().bfill()
+
         return result_df

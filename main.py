@@ -15,7 +15,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import warnings
 from correlation_analyzer import CorrelationAnalyzer, CorrelationVisualizer
-from data_loader import prepare_correlation_data, load_single_asset
+from data_loader import prepare_correlation_data
 
 # Ignore warnings for better readability
 warnings.filterwarnings('ignore')
