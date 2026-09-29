@@ -22,7 +22,7 @@ This repository provides a tool for analyzing correlations between financial ins
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/clementchmlt/asset-correlation-tool.git
+   git clone https://github.com/clementchamalet/asset-correlation-tool.git
    cd asset-correlation-tool
    ```
 
