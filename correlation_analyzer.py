@@ -1,7 +1,7 @@
 """
 Correlation Analysis Tool
 ============================================================
-Author: clementchmlt
+Author: clementchamalet
 Date: October 2025
 """
 
