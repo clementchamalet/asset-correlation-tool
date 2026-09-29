@@ -3,7 +3,7 @@ Data Loader for Advanced Correlation Analysis
 ============================================
 Utilities to load and prepare data from various formats for correlation analysis.
 
-Author: clementchmlt
+Author: clementchamalet
 Date: October 2025
 """
 
