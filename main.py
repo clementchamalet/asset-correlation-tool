@@ -4,7 +4,7 @@ Advanced Correlation Analysis Tool
 =================================
 Interactive tool for analyzing correlation between financial assets.
 
-Author: clementchmlt
+Author: clementchamalet
 Date: October 2025
 """
 
@@ -30,7 +30,7 @@ def print_header():
     print("=" * 80)
     print("ADVANCED CORRELATION ANALYSIS")
     print("=" * 80)
-    print("Developed by clementchmlt")
+    print("Developed by clementchamalet")
     print()
 
 def select_assets():
